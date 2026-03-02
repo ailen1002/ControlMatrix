@@ -24,7 +24,7 @@ public partial class App : Application
         services.AddSingleton<INavigationService, NavigationService>();
 
         //services.AddTransient<StartUpViewModel>();
-        //services.AddTransient<ConfigFileViewModel>();
+        services.AddTransient<ConfigFileViewModel>();
         services.AddTransient<MainWindowViewModel>();
 
         var provider = services.BuildServiceProvider();
@@ -32,8 +32,8 @@ public partial class App : Application
         var nav = provider.GetRequiredService<INavigationService>();;
 
         //nav.Register<StartUpView, StartUpViewModel>(PageKey.StartUp);
-        //nav.Register<ConfigFileView, ConfigFileViewModel>(PageKey.ConfigFile);
         nav.Register<MainWindow, MainWindowViewModel>(PageKey.MainTest);
+        nav.Register<ConfigFileView, ConfigFileViewModel>(PageKey.ConfigFile);
         //nav.Register<ErrorView>(PageKey.Error);
 
         nav.Navigate(PageKey.MainTest);

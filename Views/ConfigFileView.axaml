@@ -1,19 +1,14 @@
-<Window
-    Icon="/Assets/avalonia-logo.ico"
-    Title="ControlMatrix"
+﻿<Window
+    Title="ConfigFileView"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d"
-    x:Class="ControlMatrix.Views.MainWindow"
-    x:DataType="vm:MainWindowViewModel"
+    x:Class="ControlMatrix.Views.ConfigFileView"
+    x:DataType="vm:ConfigFileViewModel"
     xmlns="https://github.com/avaloniaui"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:ControlMatrix.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <TextBlock
-        HorizontalAlignment="Center"
-        Text="{Binding Greeting}"
-        VerticalAlignment="Center" />
-
+    配置文件页面
 </Window>
