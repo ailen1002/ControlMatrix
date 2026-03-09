@@ -1,0 +1,63 @@
+﻿<Window
+    SystemDecorations="None"
+    Title="StartUpView"
+    WindowStartupLocation="CenterScreen"
+    WindowState="FullScreen"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="ControlMatrix.Views.StartUpView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Background="#1E1E2F">
+        <!--  背景渐变动画  -->
+        <Grid.Styles>
+            <Style Selector="TextBlock#LoadingText">
+                <Style.Animations>
+                    <Animation Duration="0:0:2" IterationCount="Infinite">
+                        <KeyFrame Cue="0%">
+                            <Setter Property="Opacity" Value="0" />
+                        </KeyFrame>
+                        <KeyFrame Cue="20%">
+                            <Setter Property="Opacity" Value="0.25" />
+                        </KeyFrame>
+                        <KeyFrame Cue="30%">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </KeyFrame>
+                        <KeyFrame Cue="40%">
+                            <Setter Property="Opacity" Value="0.75" />
+                        </KeyFrame>
+                        <KeyFrame Cue="50%">
+                            <Setter Property="Opacity" Value="1" />
+                        </KeyFrame>
+                        <KeyFrame Cue="60%">
+                            <Setter Property="Opacity" Value="0.75" />
+                        </KeyFrame>
+                        <KeyFrame Cue="70%">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </KeyFrame>
+                        <KeyFrame Cue="80%">
+                            <Setter Property="Opacity" Value="0.25" />
+                        </KeyFrame>
+                        <KeyFrame Cue="100%">
+                            <Setter Property="Opacity" Value="0" />
+                        </KeyFrame>
+                    </Animation>
+                </Style.Animations>
+            </Style>
+        </Grid.Styles>
+
+        <!--  居中提示文字  -->
+        <TextBlock
+            FontSize="28"
+            FontWeight="Bold"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            Text="正在初始化，请稍后..."
+            VerticalAlignment="Center"
+            x:Name="LoadingText" />
+    </Grid>
+</Window>
