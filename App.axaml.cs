@@ -1,8 +1,9 @@
 using System;
 using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using ControlMatrix.Devices;
 using ControlMatrix.Interfaces;
+using ControlMatrix.Modbus;
 using ControlMatrix.Models;
 using ControlMatrix.Services;
 using ControlMatrix.ViewModels;
@@ -40,6 +41,17 @@ public partial class App : Application
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<IModbusTcpClient, ModbusTcpClientService>();
         services.AddSingleton<IModbusRtuClient, ModbusRtuClientService>();
+        services.AddSingleton<DetectionServices>();
+        
+        // -----------------------------
+        // 注册设备
+        // -----------------------------
+        
+        services.AddSingleton<SwitchInputBoard>();
+        services.AddSingleton<RelayOutputBoard>();
+
+        services.AddSingleton<DeviceContext>();
+        services.AddSingleton<DeviceManager>();
 
         // -----------------------------
         // 注册 Window
