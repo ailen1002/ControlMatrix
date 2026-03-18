@@ -12,6 +12,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock Text="{Binding Model}" />
-        <Button>返回</Button>
+        <Button Command="{Binding TestCommand}" Content="开始测试" />
     </StackPanel>
 </Window>
